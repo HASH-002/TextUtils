@@ -1,12 +1,12 @@
 import './App.css';
 import React, { useState } from 'react'
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router, Switch, Route,
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router, Switch, Route,
+} from "react-router-dom";
 
 function App() {
 
@@ -35,20 +35,20 @@ function App() {
   }
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-          {/* <Switch>
+          <Switch>
             <Route exact path="/about">
-              <About />
+              <About mode={mode} />
             </Route>
-            <Route exact path="/"> */}
-              <Textform heading="Enter the Text to analyze" mode={mode} showAlert={showAlert} />
-            {/* </Route>
-          </Switch> */}
+            <Route exact path="/">
+              <Textform heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode} showAlert={showAlert} />
+            </Route>
+          </Switch>
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
